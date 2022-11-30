@@ -1,0 +1,32 @@
+<mvc:View
+	controllerName="sap.ui.demo.walkthrough.controller.App"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+	>
+   <html:style>
+      .float-right {
+        float:right
+      }            
+      .list {
+        padding: 20px
+      }  
+      .search {
+        padding: 15px
+      }           
+   </html:style>	
+    <SearchField class="search" search="onSearch" width="100%" />
+
+    <List
+        id="todo"
+        class="list"
+        items="{filteredListData>/}"
+    >
+      <CustomListItem
+      >
+              <Text class="relative text-red" text="{filteredListData>title}"/>
+              <Button class="float-right" text="Detalhes" press="onPressMoreInfos"/>
+        <CheckBox class="float-right" selected="{filteredListData>completed}" select="onChange"/>
+      </CustomListItem>
+    </List>	
+</mvc:View>

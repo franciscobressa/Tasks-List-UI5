@@ -1,0 +1,31 @@
+<mvc:View
+	controllerName="sap.ui.demo.walkthrough.controller.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+  	xmlns:html="http://www.w3.org/1999/xhtml"
+	>
+	<Page
+		title="Detalhes">
+   <html:style>
+      .list {
+        padding: 20px
+      }  
+	  .w-100{
+		width: 100%
+	  }
+   </html:style>			
+    <List
+        id="todo"
+        class="list"
+        items="{filteredListData>/}"
+    >
+      <CustomListItem
+      >
+              <Text class="w-100" text="UserID: {filteredListData>userId}"/>
+              <Text class="w-100" text="ID: {filteredListData>id}"/>
+              <Text class="w-100" text="Title: {filteredListData>title}"/>
+              <Text class="w-100" text="Completed: {filteredListData>completed}"/>
+      </CustomListItem>
+    </List>
+</Page>
+</mvc:View>
